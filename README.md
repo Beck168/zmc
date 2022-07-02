@@ -1,4 +1,4 @@
-# zmc
+# zz
 
 ## Project setup
 ```
