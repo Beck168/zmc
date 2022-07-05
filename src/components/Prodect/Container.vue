@@ -3,7 +3,7 @@
 		<el-container style=" border: 1px solid #ffffff;margin: 30px 150px 0 150px ;">
 			<el-aside width="200px" style="background-color: rgb(247, 251, 255)">
 
-				<el-menu :default-openeds="['1', '3']" :default-active="defaultActive">
+				<el-menu :default-openeds="['1', '3']" :default-active="defaultActive.toString()">
 					<el-menu-item index="-1" @click='switchClassTitle()'>
 						<i class="el-icon-menu"></i>
 						<span slot="title">{{title}}</span>
@@ -20,7 +20,7 @@
 				<el-header style="text-align: left; font-size: 18px">
 					{{text}}
 				</el-header>
-				<el-main style="overflow: visible;" >
+				<el-main style="overflow: visible;">
 					<!-- 商品数据为空时显示 -->
 					<el-empty v-if='productList.length === 0' :description="dataNull"></el-empty>
 					<!-- 商品数据为空时显示 -->
@@ -31,9 +31,9 @@
 							<el-col :span="8" v-for="(i, index) in productList" :key="index"
 								style='width:300px; height: 450px; margin: 10px 10px 10px 30px;'>
 								<el-card :body-style="{ padding: '0px' }" shadow="hover" style='height: 100%;'>
-									<a  style="cursor:pointer">
+									<a style="cursor:pointer">
 										<img :src="i.url" style="width: 100%; height: 300px;" class="image"
-												@click='toDetils(i)'>
+											@click='toDetils(i)'>
 									</a>
 									<div style="padding: 14px; ">
 										<span class="spanTitle" @click='toDetils(i)'>{{i.title}}</span><br>
@@ -95,14 +95,13 @@
 	export default {
 		data() {
 			return {
-				defaultActive:-1, //选中的分类
+				defaultActive: "-1", //选中的分类
 				title: '', //标题文字
 				text: '', //商品分类标题文字
 				optionsList: [], //选项文字
 				productList: [], //分类商品数据
 				currentPage: 1, //当前页数
 				lengths: 0, //总商品数
-				currentDate: new Date(),
 				arrList: [], //展示的商品数
 				dataNull: "", //判断是否为空
 				detilsImg: [], //详情图片
@@ -134,21 +133,23 @@
 				this.dataNull = "暂无商品"
 				this.optionsList = ["精华液", "洗面奶", "爽肤水", "乳液面霜", "眼部护理", "面膜", "套装", "底妆隔离"];
 			}
+
 			this.productList = this.arrList.slice(0, 9)
 			this.lengths = this.arrList.length;
-			// 判断语言
-			
+
+
 			// 判断是否携带id
-			if(this.$route.params.id){
+			if (this.$route.params.id) {
+				console.log(this.$route.params.id);
 				this.detilsTitle = this.$route.params.title
 				this.detilsTitleImg = this.$route.params.url
 				this.detilsBool = true
 				this.detileImgById = this.detilsImg[this.$route.params.id]
 			}
-			if(this.$route.query.id){
-				this.switchClass(this.$route.query.id )
+			if (this.$route.query.id) {
+				this.switchClass(this.$route.query.id)
 			}
-			
+
 		},
 		methods: {
 			// 计算分页数据
@@ -162,13 +163,12 @@
 				this.detilsBool = false
 				let arr = []
 				this.arrList.forEach((i) => {
-					if (i.type == idx) {
-						console.log(i.type);
+					if (i.type == String(idx)) {
 						arr.push(i)
 					}
 				})
 				this.lengths = arr.length
-				this.productList = arr
+				this.productList = arr.splice(0, 9)
 				this.text = this.optionsList[idx]
 			},
 			// 点击更换分类标题
@@ -176,6 +176,7 @@
 				this.detilsBool = false
 				this.lengths = this.arrList.length;
 				this.productList = this.arrList.slice(0, 9)
+
 			},
 			// 点击显示商品详情
 			toDetils(i) {
@@ -183,9 +184,9 @@
 				this.detilsTitleImg = i.url
 				this.detilsBool = true
 				this.detileImgById = this.detilsImg[i.id]
-				console.log(i);
-				// console.log(this.detileImgById);
-			}
+			},
+				
+			
 		}
 	};
 </script>
@@ -258,7 +259,8 @@
 		color: #666666;
 		font-size: 22px;
 	}
-	.detilsImage{
+
+	.detilsImage {
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -266,7 +268,7 @@
 	}
 
 	.spanTitle {
-		cursor:pointer;
+		cursor: pointer;
 	}
 
 	.spanTitle:hover {

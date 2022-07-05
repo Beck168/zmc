@@ -27,6 +27,7 @@
 		},
 
 		mounted() {
+			document.documentElement.scrollTop = 0;
 			// 判断手机端还是PC端
 			if (this._isMobilde()) {
 				this.flag = true

@@ -34,7 +34,6 @@
 		mounted() {
 			this.num = localStorage.getItem("idx")
 			this.language();
-			console.log(localStorage.getItem("idx"));
 		},
 		methods: {
 			language(idx) {

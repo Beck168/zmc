@@ -139,19 +139,19 @@
 		0% {
 			top: 0px;
 		}
-
+		
 		25% {
-			top: 200px;
+			top: 25px;
 		}
-
+		
 		50% {
-			top: 100px;
+			top: -10px;
 		}
-
+		
 		75% {
-			top: 200px;
+			top: 25px;
 		}
-
+		
 		100% {
 			top: 0px;
 		}

@@ -3,7 +3,7 @@
 		<div class="swiper-wrapper">
 			<div class="swiper-slide" v-for="(item,idx) in imageList" :key="idx">
 				<div style="width: 100%; ">
-					<img  style="width: 100%;height: 500px;cursor: pointer;" :src="item.url" @click="toDetils(item)">
+					<b-img-lazy  style="width: 100%;height: 500px;cursor: pointer;" :src="item.url" @click="toDetils(item)"></b-img-lazy>
 				</div>
 				<h5 class="titleText">{{item.title}}</h5>
 				<div style="text-align: center;">

@@ -29,8 +29,8 @@
 			</b-row>
 		</b-container>
 		<!-- 过度图 -->
-		<b-img src="http://zmcmall.com/Upload/5e86e89d8a22a.jpg" fluid alt="Responsive image"></b-img>
-		
+		<b-img-lazy src="http://zmcmall.com/Upload/5e86e89d8a22a.jpg" fluid alt="Responsive image"></b-img-lazy>
+
 		<BackTop></BackTop>
 		<font></font>
 	</div>
@@ -44,16 +44,24 @@
 		data() {
 			return {
 				flag: false,
-				starText:'',
-				popularText:''
+				starText: '',
+				popularText: ''
 			}
 		},
 		components: {
 			Popular,
 			swiperPhone,
 		},
-		
+
 		mounted() {
+			if (this.$route.query.fwm) {
+				this.$router.push({
+					path: `/SecurityCheck/${this.$route.params.language}`,
+					query: {
+						fwm: this.$route.query.fwm
+					},
+				});
+			}
 			// 判断手机端还是PC端
 			if (this._isMobilde()) {
 				this.flag = true
@@ -65,7 +73,7 @@
 				document.title = "Home";
 				this.starText = 'Star products'
 				this.popularText = 'Popular products'
-			}else if(this.$route.params.language == "cn"){
+			} else if (this.$route.params.language == "cn") {
 				document.title = "首页";
 				this.starText = '明星单品'
 				this.popularText = '人气单品'

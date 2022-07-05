@@ -1,20 +1,25 @@
 <template>
-	<div id="font">
-		<ul class="fontUl">
-			<li class="titleTop">{{titleList[0]}}</li>
-			<!-- <li class="titleList">{{ $route.params.language == "en"? 'Home':'首页' }}</li> -->
-			<li class="titleList" @click="toBrandIntroduction()">{{ $route.params.language == "en"? 'history':'发展历程' }}
-			</li>
-
-		</ul>
-		<ul class="fontUl">
-			<li class="titleTop">{{titleList[1]}}</li>
-			<li class="titleList" v-for="(i,idx) in text" :key="idx" @click="toDetils(idx)">{{i}}</li>
-		</ul>
-		<ul class="fontUl">
-			<li class="titleTop">{{titleList[2]}}</li>
-			<li><img src="../assets/ewm.jpg" alt=""></li>
-		</ul>
+	<div>
+		<div id="font">
+			<ul class="fontUl">
+				<li class="titleTop">{{titleList[0]}}</li>
+				<!-- <li class="titleList">{{ $route.params.language == "en"? 'Home':'首页' }}</li> -->
+				<li class="titleList" @click="toBrandIntroduction()">{{ $route.params.language == "en"? 'history':'发展历程' }}
+				</li>
+		
+			</ul>
+			<ul class="fontUl">
+				<li class="titleTop">{{titleList[1]}}</li>
+				<li class="titleList" v-for="(i,idx) in text" :key="idx" @click="toDetils(idx)">{{i}}</li>
+			</ul>
+			<ul class="fontUl">
+				<li class="titleTop">{{titleList[2]}}</li>
+				<!-- <li><img src="../assets/ewm.jpg" alt=""></li> -->
+			</ul>
+		</div>
+		<div style="text-align: center;background-color:#155083;color: #FFF;line-height: 30px;">
+			&copy;2022 ZMC. All rights reserved
+		</div>
 	</div>
 </template>
 
@@ -42,9 +47,9 @@
 				// 判断手机端还是PC端
 				let i;
 				if (this._isMobilde()) {
-					i = this.$route.params.language == 'cn'? idx+1 : idx 
-				} 
-				
+					i = this.$route.params.language == 'cn' ? idx + 1 : idx
+				}
+
 				window.location.href = `/Product/${this.$route.params.language}?id=${i ? i : idx}`;
 				// this.$router.push({
 				// 	path: `/Product/${this.$route.params.language}`,

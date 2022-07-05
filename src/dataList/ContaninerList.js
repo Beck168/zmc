@@ -71,6 +71,5 @@ export default[
 	
 	{url:'http://zmcmall.com/Upload/5f3669d1be0d0.jpg',title:'母菊蚕丝水嫩倍现套装（洁+水+乳+精华）',text:'',price:'￥599.00',type:6,id:'36'},
 	
-	
-	
+
 ]
