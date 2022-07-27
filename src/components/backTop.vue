@@ -60,8 +60,8 @@ export default {
 <style>
 .top {
   position: fixed;
-  bottom: 70px;
-  right: 20px;
+  bottom: 15vh;
+  right: 8vw;
   border:3px solid #75aea5;
   border-radius: 25%;
 }

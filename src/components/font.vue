@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<div id="font">
+		<!-- <div id="font">
 			<ul class="fontUl">
 				<li class="titleTop">{{titleList[0]}}</li>
-				<!-- <li class="titleList">{{ $route.params.language == "en"? 'Home':'首页' }}</li> -->
+				<li class="titleList">{{ $route.params.language == "en"? 'Home':'首页' }}</li>
 				<li class="titleList" @click="toBrandIntroduction()">{{ $route.params.language == "en"? 'history':'发展历程' }}
 				</li>
 		
@@ -14,9 +14,9 @@
 			</ul>
 			<ul class="fontUl">
 				<li class="titleTop">{{titleList[2]}}</li>
-				<!-- <li><img src="../assets/ewm.jpg" alt=""></li> -->
+				<li><img src="../assets/ewm.jpg" alt=""></li>
 			</ul>
-		</div>
+		</div> -->
 		<div style="text-align: center;background-color:#155083;color: #FFF;line-height: 30px;">
 			&copy;2022 ZMC. All rights reserved
 		</div>

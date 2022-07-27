@@ -25,9 +25,14 @@ body {
   top: 50%;
   left: 50%;
 }
-@media screen and (max-width:720px) {
+@media screen and (min-width:720px) {
 	.app{
 		margin-top: 8vh;
+	}
+}
+@media screen and (max-width:720px) {
+	.app{
+		margin-bottom: 12vh;
 	}
 }
 </style>

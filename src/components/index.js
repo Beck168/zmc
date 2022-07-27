@@ -4,6 +4,7 @@ import BackTop from './backTop.vue';
 import lbt from './Swipers.vue'
 import NavBar from './NavBar.vue';
 import swiperGrope from "./swiperGrope.vue"
+import Particles from './Particles.vue';
 export default {
   install(Vue) {
   // 注册全局组件
@@ -12,5 +13,6 @@ export default {
 	Vue.component("swiperGrope",swiperGrope)
     Vue.component('Font', Font)
     Vue.component("BackTop",BackTop)
+    Vue.component("Particles",Particles)
   }
 }
