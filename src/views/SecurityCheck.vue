@@ -67,10 +67,10 @@
         <b-row v-if="flag" style="margin-top: 5vh">
           <b-input-group class="mt-3,Forminput">
             <b-form-input
-              style="background-color: transparent; color: #000"
+              style="background-color: transparent; color: #fff"
               v-model="inputFwm"
               :placeholder="
-                bool ? 'Please enter a verification code' : '请输入验证码'
+                bool ? 'Please enter a verification code' : '请输入防伪验证码'
               "
             ></b-form-input>
             <b-input-group-append>
@@ -244,7 +244,7 @@ export default {
           text
             ? text
             : variant == "success"
-            ? "成功"
+            ? "正品"
             : variant == "warning"
             ? "注意"
             : "错误",
@@ -259,7 +259,7 @@ export default {
       this.$bvToast.toast([vNodesMsg], {
         title:
           variant == "success"
-            ? "成功"
+            ? "正品"
             : variant == "warning"
             ? "注意"
             : "错误",
@@ -349,7 +349,7 @@ export default {
 <style scoped>
 #bg {
   width: 100%;
-	height: 100%;
+	height: 100vh;
 }
 
 .container {
@@ -405,41 +405,41 @@ export default {
 }
 /* 查询结果文字 */
 .msg{
-	position: absolute;
-	top: 40%;
+	position: relative;
+	top: 30%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 /* // 如果是全屏展示 */
 .login-bg {
   width: 100%;
-  height: 773px;
+  height: 100%;
 	background: rgb(255, 255, 255);
-	background-image: url(../assets/1.png);
+	background-image: url('../assets/111.png');
 	background-size: 100% 100%;
 }
 .login-bg2{
 	width: 100%;
   height: 100vh;
 	background: rgb(255, 255, 255);
-	background-image: url(../assets/2.png);
+	background-image: url(../assets/222.png);
 	background-size: 100% 100%;
 }
 
 /* 修改输入框提示文字颜色 */
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #000;
+  color: #fff;
 }
 
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #000;
+  color: #fff;
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #000;
+  color: #fff;
 }
 /* 修改输入框提示文字颜色 */
 </style>
