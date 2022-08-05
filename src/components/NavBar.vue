@@ -51,51 +51,59 @@ export default {
       if (this.$route.params.language == "en") {
         this.list = [
           {
-            name: "Home",
-            path: "/home/en",
-          },
-          {
-            name: "Product",
-            path: "/Product/en",
-          },
-          {
-            name: "Security check",
-            path: "/SecurityCheck/en",
-          },
-          {
-            name: "Brand introduction",
-            path: "/BrandIntroduction/en",
-          },
-          {
-            name: "中文",
-            path: "/home/cn",
-          },
+              name: "Home",
+              path: "/home/en",
+            },
+            {
+              name: "PD",
+              path: "/Product/en",
+            },
+            {
+              name: "SC",
+              path: "/SecurityCheck/en",
+            },
+            {
+              name: "BI",
+              path: "/BrandIntroduction/en",
+            },
+            {
+              name: "AG",
+              path: "/Agent/en",
+            },
+            {
+              name: "中文",
+              path: "/home/cn",
+            },
         ];
         if (idx == this.list.length - 1) {
           window.location.href = "/home/en";
         }
       } else if (this.$route.params.language == "cn") {
         this.list = [
-          {
-            name: "首页",
-            path: "/home/cn",
-          },
-          {
-            name: "产品中心",
-            path: "/Product/cn",
-          },
-          {
-            name: "防伪查询",
-            path: "/SecurityCheck/cn",
-          },
-          {
-            name: "品牌介绍",
-            path: "/BrandIntroduction/cn",
-          },
-          {
-            name: "English",
-            path: "/home/en",
-          },
+         {
+              name: "首页",
+              path: "/home/cn",
+            },
+            {
+              name: "产品",
+              path: "/Product/cn",
+            },
+            {
+              name: "防伪",
+              path: "/SecurityCheck/cn",
+            },
+            {
+              name: "品牌",
+              path: "/BrandIntroduction/cn",
+            },
+             {
+              name: "代理",
+              path: "/Agent/cn",
+            },
+            {
+              name: "En",
+              path: "/home/en",
+            },
         ];
         if (idx == this.list.length - 1) {
           window.location.href = "/home/cn";
@@ -124,6 +132,10 @@ export default {
               path: "/BrandIntroduction/en",
             },
             {
+              name: "AG",
+              path: "/Agent/en",
+            },
+            {
               name: "中文",
               path: "/home/cn",
             },
@@ -149,6 +161,10 @@ export default {
               name: "品牌",
               path: "/BrandIntroduction/cn",
             },
+             {
+              name: "代理",
+              path: "/Agent/cn",
+            },
             {
               name: "En",
               path: "/home/en",
@@ -164,14 +180,6 @@ export default {
     },
     changeStyle(idx) {
       this.language(idx);
-
-      // 	if (idx == this.list.length - 1) {
-      // 		this.num = 0
-      // 		localStorage.setItem("idx",0)
-      // 		return;
-      // 	}
-      // 	this.num = idx;
-      // 	localStorage.setItem("idx",idx)
     },
   },
 };

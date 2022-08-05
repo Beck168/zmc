@@ -32,6 +32,11 @@ const routes = [
     name:'BrandIntroduction',
     component:()=> import("../views/BrandIntroduction.vue")
   },
+  {
+    path:'/Agent/:language',
+    name:'Agent',
+    component:()=> import("../views/Agent.vue")
+  },
 ]
 
 const router = new VueRouter({

@@ -47,7 +47,7 @@
               <b-alert show :variant="alertTitle" class="b-alert"
                 >{{
                   alertTitle == "success"
-                    ? "成功"
+                    ? "正品"
                     : alertTitle == "warning"
                     ? "注意"
                     : "错误"
